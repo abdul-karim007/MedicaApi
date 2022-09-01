@@ -21,25 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-IS_HEROKU = "DYNO" in os.environ
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-hnh8l8a*+$s5&cb%#w92d4zj*p8^ofgp_+)i7papmmuo5sm0ft'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
-# ALLOWED_HOSTS = []
-
-# Generally avoid wildcards(*). However since Heroku router provides hostname validation it is ok
-if IS_HEROKU:
-    ALLOWED_HOSTS = ["*"]
-else:
-    ALLOWED_HOSTS = []
-
-# SECURITY WARNING: don't run with debug turned on in production!
-if not IS_HEROKU:
-    DEBUG = True
+ALLOWED_HOSTS = ['medica-app-xx.herokuapp.com']
 
 
 
@@ -91,19 +80,23 @@ WSGI_APPLICATION = 'medica_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#             'NAME': 'ciba',
-#         }
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
+# }
+
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'dd230rd6v4dfud',
+            'USER': 'fieorxuzdfqaio',
+            'PASSWORD': '2b624ae8477b6b751662f4df7b4c5d3f06859f5d3082fa8b17d181632d09b137',
+            'HOST': 'ec2-44-210-36-247.compute-1.amazonaws.com',
+            'PORT': '5432'
+        }
+    }
 
 
 # Password validation
