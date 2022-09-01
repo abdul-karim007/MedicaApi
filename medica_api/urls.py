@@ -23,5 +23,5 @@ import userdata
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/userData/', include(userdata_urls))
+    path('api/userdata/', include(userdata_urls))
 ]
